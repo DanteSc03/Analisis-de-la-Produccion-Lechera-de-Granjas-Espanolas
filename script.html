@@ -7580,7 +7580,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">'/Applications/Stata/utilities'</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pystata</span> <span class="kn">import</span> <span class="n">config</span>
 <span class="n">config</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="s1">'se'</span><span class="p">)</span>
@@ -8019,6 +8021,14 @@ Sorted by:
         land |      1,482     12.9857    6.172051          2       45.1
        labor |      1,482    1.671997    .5527831          1          4
         feed |      1,482    57941.35    47981.24   3924.141   376731.6
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+        milk |      1,482    131106.6    92583.98      14410     727281
+        cows |      1,482    22.11619    11.27415        4.5       82.3
+        land |      1,482     12.9857    6.172051          2       45.1
+       labor |      1,482    1.671997    .5527831          1          4
+        feed |      1,482    57941.35    47981.24   3924.141   376731.6
 </pre>
 </div>
 </div>
@@ -8102,7 +8112,13 @@ Sorted by:
 <pre>
     Variable |       VIF       1/VIF  
 -------------+----------------------
-        cows |      8.14    0.122792
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>        cows |      8.14    0.122792
         feed |      5.57    0.179415
         land |      2.09    0.477924
        labor |      1.47    0.681362
@@ -8558,13 +8574,7 @@ Panel variable: farm (strongly balanced)
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>(247 missing values generated)
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(494 missing values generated)
+(494 missing values generated)
 (741 missing values generated)
 (988 missing values generated)
 </pre>
@@ -8687,6 +8697,20 @@ Prob &gt; F = 0.0000 indica que el modelo es significativo en general.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Los lags de cows de 1, 2 y 4 años son significativos para predecir la producción de leche. El lag 3 no parece tener un impacto significativo en la predicción de la producción de leche.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Bibliografia-%F0%9F%93%9A">Bibliografia 📚<a class="anchor-link" href="#Bibliografia-%F0%9F%93%9A">¶</a></h1><p><a href="https://pages.stern.nyu.edu/~wgreene/Econometrics/PanelDataSets.htm">Datos</a></p>
+<p><a href="https://www.stata.com/python/pystata18/install.html">Documentación PyStata</a></p>
+<p><a href="https://numpy.org/devdocs/">Documentación NumPy</a></p>
+<p><a href="https://pandas.pydata.org/docs/">Documenatación Pandas</a></p>
 </div>
 </div>
 </div>
