@@ -28,7 +28,7 @@ pip install stata_kernel
 1. Clona este repositorio en tu máquina local:
 
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/DanteSc03/stata
    ```
 
 2. Abre el notebook en Jupyter:
