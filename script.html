@@ -7516,40 +7516,57 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%90%84-An%C3%A1lisis-de-la-producci%C3%B3n-lechera-en-granjas-espa%C3%B1olas-%F0%9F%90%84">🐄 <strong>Análisis de la producción lechera en granjas españolas</strong> 🐄<a class="anchor-link" href="#%F0%9F%90%84-An%C3%A1lisis-de-la-producci%C3%B3n-lechera-en-granjas-espa%C3%B1olas-%F0%9F%90%84">¶</a></h1><p><strong>Desentrañando los factores clave que determinan el rendimiento de las granjas lácteas.</strong></p>
-<p>En un sector tan competitivo como la producción de leche, ¿qué hace que algunas granjas sean más rentables que otras? ¿Es el número de vacas, la cantidad de tierra, la mano de obra, o la alimentación lo que marca la diferencia? En este análisis, intentaremos descifrar cómo estos factores afectan la producción de leche y cuál es la influencia real de cada uno en el rendimiento de las granjas. Usaremos datos reales de granjas españolas, con registros de varios años, para entender mejor el comportamiento de las variables que afectan a esta industria.</p>
-<h2 id="1%EF%B8%8F%E2%83%A3-Objetivo">1️⃣ <strong>Objetivo</strong><a class="anchor-link" href="#1%EF%B8%8F%E2%83%A3-Objetivo">¶</a></h2><p>Nuestro objetivo es explorar la relación entre las variables de entrada (como vacas, tierra, trabajo, y alimentación) y la producción de leche en granjas españolas. Usaremos el conjunto de datos de producción lechera para obtener un modelo econométrico que nos permita entender cómo estos factores afectan el rendimiento de las granjas, y qué variables tienen mayor influencia.</p>
-<h2 id="2%EF%B8%8F%E2%83%A3-%C2%BFPor-qu%C3%A9-es-importante-esto?">2️⃣ <strong>¿Por qué es importante esto?</strong><a class="anchor-link" href="#2%EF%B8%8F%E2%83%A3-%C2%BFPor-qu%C3%A9-es-importante-esto?">¶</a></h2><p>La rentabilidad de las granjas lecheras es crucial tanto para los agricultores como para los consumidores. Los agricultores deben optimizar sus operaciones para maximizar la producción y minimizar los costos, mientras que los consumidores se benefician de precios más accesibles. Este análisis puede ofrecer recomendaciones valiosas para la industria lechera y ayudar a mejorar la eficiencia en la producción de leche.</p>
+<h1 id="%F0%9F%90%84-An%C3%A1lisis-de-la-producci%C3%B3n-lechera-en-granjas-espa%C3%B1olas-%F0%9F%90%84">🐄 <strong>Análisis de la producción lechera en granjas españolas</strong> 🐄<a class="anchor-link" href="#%F0%9F%90%84-An%C3%A1lisis-de-la-producci%C3%B3n-lechera-en-granjas-espa%C3%B1olas-%F0%9F%90%84">¶</a></h1><p><strong>Analizando los factores clave que determinan su rendimiento.</strong></p>
+<p><strong>Por: Miguel Diaz Perez de Juan y Dante Mathieu Schrantz Castro</strong></p>
+<p><strong><a href="https://github.com/DanteSc03/stata">Acceso GitHub</a></strong></p>
+<p>En un sector tan competitivo como la producción de leche, ¿qué hace que algunas granjas sean más rentables que otras? ¿Es el número de vacas, la cantidad de tierra, la mano de obra, o la alimentación lo que marca la diferencia? En este análisis, intentaremos descifrar cómo estos factores afectan la producción de leche y cuál es la influencia real de cada uno en el rendimiento de las granjas. Usaremos datos reales de unas 250 granjas del norte de España, con registros de varios años, para entender mejor el comportamiento de las variables que afectan a esta industria.</p>
+<h2 id="1%EF%B8%8F%E2%83%A3-Objetivo">1️⃣ <strong>Objetivo</strong><a class="anchor-link" href="#1%EF%B8%8F%E2%83%A3-Objetivo">¶</a></h2><p>Nuestro objetivo es explorar la relación entre las variables explicativas (como vacas, tierra, mano de obra y alimentación) y la producción de leche. Usaremos nuestro conjunto de datos de producción lechera para obtener un modelo econométrico que nos permita entender cómo estos factores afectan el rendimiento de las granjas, y qué variables tienen mayor influencia.</p>
+<h2 id="2%EF%B8%8F%E2%83%A3-%C2%BFPor-qu%C3%A9?">2️⃣ <strong>¿Por qué?</strong><a class="anchor-link" href="#2%EF%B8%8F%E2%83%A3-%C2%BFPor-qu%C3%A9?">¶</a></h2><p>La idea de este trabajo surgió una tarde entre Dante y yo, tomando un Colacao en medio de una conversación sobre la realidad de las granjas lecheras en el norte de España, especialmente en Galicia, de donde soy. Mientras charlábamos sobre cómo muchas de estas granjas luchan por mantenerse a flote, nos dimos cuenta de que era un tema que merecía ser estudiado. ¿Por qué no explorar cómo las variables económicas y operacionales de estas granjas afectan la producción de leche? Así nació nuestra motivación para analizar estos datos, con la intención de aportar alguna luz sobre cómo mejorar la eficiencia de las granjas lecheras y, de paso, comprender mejor la rentabilidad y la sostenibilidad del sector.</p>
 <h2 id="3%EF%B8%8F%E2%83%A3-Variables-a-considerar">3️⃣ <strong>Variables a considerar</strong><a class="anchor-link" href="#3%EF%B8%8F%E2%83%A3-Variables-a-considerar">¶</a></h2><p>Las variables presentes en el conjunto de datos son las siguientes:</p>
 <p><strong>Entradas:</strong></p>
 <ul>
 <li><strong>COWS:</strong> Número de vacas en la granja.</li>
-<li><strong>X1 (log de las desviaciones de las vacas respecto a las medias):</strong> Relacionado con el comportamiento de las vacas y su impacto en la producción.</li>
-<li><strong>LAND (log de las desviaciones respecto a las medias de la tierra):</strong> Medida de la cantidad de terreno disponible.</li>
-<li><strong>LABOR (log de las desviaciones respecto a las medias de la mano de obra):</strong> Número de trabajadores en la granja.</li>
-<li><strong>FEED (log de las desviaciones respecto a las medias de la alimentación):</strong> Tipo y cantidad de alimentación proporcionada.</li>
+<li><strong>LAND:</strong> Medida de la cantidad de terreno disponible.</li>
+<li><strong>LABOR:</strong> Número de trabajadores en la granja.</li>
+<li><strong>FEED:</strong> Cantidad de alimentación proporcionada.</li>
+</ul>
+<p><strong>Variables transformadas (logaritmos):</strong></p>
+<ul>
+<li><strong>X1 (log de COWS):</strong> Logaritmo del número de vacas en la granja.</li>
+<li><strong>X2 (log de LAND):</strong> Logaritmo de la cantidad de terreno disponible.</li>
+<li><strong>X3 (log de LABOR):</strong> Logaritmo del número de trabajadores.</li>
+<li><strong>X4 (log de FEED):</strong> Logaritmo de la cantidad de alimentación proporcionada.</li>
 </ul>
 <p><strong>Términos Translog (variables cuadráticas y de productos cruzados):</strong></p>
 <ul>
-<li><strong>X11, X22, X33, X44, X12, X13, X14, X23, X24, X34:</strong> Estas variables ayudan a capturar las interacciones no lineales entre las variables de entrada.</li>
+<li><strong>X11, X22, X33, X44:</strong> Cuadráticos de las variables logarítmicas X1, X2, X3 y X4, respectivamente.</li>
+<li><strong>X12, X13, X14, X23, X24, X34:</strong> Productos cruzados de las variables logarítmicas, que capturan las interacciones no lineales entre ellas.</li>
 </ul>
 <p><strong>Variables dummy de año:</strong></p>
 <ul>
-<li><strong>YEAR93, YEAR94, ..., YEAR98:</strong> Variables que indican el año de observación, permitiendo capturar efectos temporales.</li>
+<li><strong>YEAR93, YEAR94, ..., YEAR98:</strong> Variables que indican el año de observación.</li>
 </ul>
 <p><strong>Salida:</strong></p>
 <ul>
 <li><strong>MILK:</strong> La producción total de leche de cada granja.</li>
-<li><strong>YIT (log de la producción de leche):</strong> El logaritmo de la producción de leche para transformar la relación lineal.</li>
+<li><strong>YIT (log de la producción de leche):</strong> En nuestro caso no la usaremos, usaremos directamene el output de leche -&gt; MILK para nuestros modelos y para el Time Series.</li>
 </ul>
-<h2 id="4%EF%B8%8F%E2%83%A3-Metodolog%C3%ADa">4️⃣ <strong>Metodología</strong><a class="anchor-link" href="#4%EF%B8%8F%E2%83%A3-Metodolog%C3%ADa">¶</a></h2><ol>
+<h2 id="4%EF%B8%8F%E2%83%A3-Metodolog%C3%ADa---Datos-de-Panel">4️⃣ <strong>Metodología - Datos de Panel</strong><a class="anchor-link" href="#4%EF%B8%8F%E2%83%A3-Metodolog%C3%ADa---Datos-de-Panel">¶</a></h2><ol>
 <li><p><strong>Datos de Panel</strong>: Dado que tenemos datos de varias granjas a lo largo de varios años (N = 247, T = 6), el modelo adecuado para este análisis es un modelo de <strong>panel</strong>. Esto nos permitirá capturar tanto las variaciones a nivel de granja como las variaciones temporales.</p>
 </li>
 <li><p><strong>Regresión de Panel</strong>: Usaremos una regresión de panel para analizar cómo las variables de entrada y los efectos del año influyen en la producción de leche. Además, probaremos con efectos fijos y aleatorios para ver qué tipo de especificación se ajusta mejor a los datos.</p>
 </li>
 <li><p><strong>Multicolinealidad</strong>: Antes de realizar la regresión, verificaremos si existe multicolinealidad entre las variables de entrada, usando el índice de <strong>VIF</strong> (Factor de Inflación de la Varianza).</p>
 </li>
-<li><p><strong>Ajustes adicionales</strong>: Si encontramos problemas de multicolinealidad, ajustaremos el modelo eliminando o transformando variables que causen redundancia.</p>
+</ol>
+<h2 id="5%EF%B8%8F%E2%83%A3-Metodolog%C3%ADa---Time-Series">5️⃣ <strong>Metodología - Time Series</strong><a class="anchor-link" href="#5%EF%B8%8F%E2%83%A3-Metodolog%C3%ADa---Time-Series">¶</a></h2><ol>
+<li><p><strong>Series Temporales</strong>: Dado que nuestro objetivo es predecir la producción de leche (<strong>MILK</strong>) a partir de sus valores pasados y de los lags de la variable <strong>COWS</strong>, aplicamos un análisis de <strong>series temporales</strong>. En este análisis, consideramos que la producción de leche depende de los valores previos de la variable de vacas.</p>
+</li>
+<li><p><strong>Autocorrelación y Lags</strong>: Después de obtener la serie temporal, hemos realizado un análisis de <strong>autocorrelación</strong> para identificar si los <strong>lags de la variable COWS</strong> son significativos para predecir el valor futuro de la producción de leche. Esto nos ayudó a seleccionar los lags adecuados para el modelo.</p>
+</li>
+<li><p><strong>Modelos AR (Autoregresivos)</strong>: Para predecir la producción futura de leche, aplicamos un <strong>modelo AR</strong> usando los <strong>lags de COWS</strong> seleccionados. Esto nos permitió capturar la relación entre la producción de leche y los valores pasados de las vacas.</p>
+</li>
+<li><p><strong>Evaluación de Resultados</strong>: Finalmente, analizamos los resultados del modelo AR, evaluando la significancia de los coeficientes.</p>
 </li>
 </ol>
 </div>
@@ -7616,11 +7633,8 @@ Notes:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Fuentes-de-Datos"><strong>Fuentes de Datos</strong><a class="anchor-link" href="#Fuentes-de-Datos">¶</a></h4><p>Los datos utilizados provienen de un conjunto de datos sobre la producción lechera en granjas españolas, el cual se obtiene de diversas fuentes públicas y bases de datos agrícolas españolas. Los detalles específicos sobre las fuentes de los datos pueden ser consultados en el sitio web oficial de las instituciones que recopilan y mantienen estos registros.</p>
-<h4 id="Notas-Adicionales"><strong>Notas Adicionales</strong><a class="anchor-link" href="#Notas-Adicionales">¶</a></h4><ul>
-<li><strong>Verificación de datos temporales</strong>: El conjunto de datos incluye variables de tiempo (<code>year</code>), permitiendo análisis de series temporales sobre la evolución de la producción de leche en las granjas.</li>
-<li><strong>Variables de interés</strong>: Las variables como <code>cows</code>, <code>land</code>, y <code>milk</code> son esenciales para evaluar la productividad y la eficiencia de las granjas lecheras, permitiendo realizar un análisis detallado sobre las relaciones entre recursos y producción.</li>
-</ul>
+<h4 id="Fuentes-de-Datos"><strong>Fuentes de Datos</strong><a class="anchor-link" href="#Fuentes-de-Datos">¶</a></h4><p>Los datos utilizados provienen de un conjunto de datos sobre la producción lechera en granjas españolas, disponible en la web de NYU Stern, que proporciona acceso a diversos conjuntos de datos de panel utilizados en econometría. Esta fuente es una recopilación de datasets que pueden ser utilizados para análisis económicos y agrícolas.</p>
+<p>Se puede encontrar más información y acceder al conjunto de datos en el siguiente enlace: <a href="https://pages.stern.nyu.edu/~wgreene/Econometrics/PanelDataSets.htm">NYU Stern Panel Data Sets</a>.</p>
 </div>
 </div>
 </div>
@@ -7802,33 +7816,6 @@ Sorted by:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> misstable summarize
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(variables nonmissing or string)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> histogram cows, bin(20) title("Distribución del número de vacas en las granjas") xlabel(, grid) ylabel(, grid)
 <span class="o">%</span><span class="k">stata</span> histogram land, bin(20) title("Distribución del área de tierra utilizada en las granjas") xlabel(, grid) ylabel(, grid)
 <span class="o">%</span><span class="k">stata</span> histogram labor, bin(20) title("Distribución del trabajo (horas) en las granjas") xlabel(, grid) ylabel(, grid)
@@ -7896,6 +7883,40 @@ Sorted by:
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.-Distribuci%C3%B3n-del-N%C3%BAmero-de-Vacas-en-las-Granjas%F0%9F%90%AE">1. Distribución del Número de Vacas en las Granjas🐮<a class="anchor-link" href="#1.-Distribuci%C3%B3n-del-N%C3%BAmero-de-Vacas-en-las-Granjas%F0%9F%90%AE">¶</a></h3><ul>
+<li><strong>Forma de la Distribución</strong>: La distribución es asimétrica positiva (con sesgo a la derecha), lo cual significa que la mayoría de las granjas tienen un número relativamente bajo de vacas, mientras que pocas granjas tienen un número mas alto de vacas.</li>
+<li><strong>Moda</strong>: El máximo de la distribución se encuentra entre 15 y 25 vacas, lo que sugiere que la mayoría de las granjas tienen un número de vacas en este rango.</li>
+<li><strong>Cola Derecha</strong>: La cola derecha es larga, indicando que hay algunas granjas con un número significativamente mayor de vacas, aunque son pocas en comparación con la mayoría.</li>
+</ul>
+<h3 id="2.-Distribuci%C3%B3n-del-%C3%81rea-de-Tierra-Utilizada-en-las-Granjas%E2%9B%B0%EF%B8%8F">2. Distribución del Área de Tierra Utilizada en las Granjas⛰️<a class="anchor-link" href="#2.-Distribuci%C3%B3n-del-%C3%81rea-de-Tierra-Utilizada-en-las-Granjas%E2%9B%B0%EF%B8%8F">¶</a></h3><ul>
+<li><strong>Forma de la Distribución</strong>: La distribución del área de tierra también muestra un sesgo a la derecha, similar a la distribución del número de vacas. Esto indica que la mayoría de las granjas tienen una superficie relativamente pequeña, mientras que hay pocas con grandes extensiones de tierra.</li>
+<li><strong>Moda</strong>: La moda se encuentra entre 8 y 12 hectáreas, lo cual sugiere que la mayoría de las granjas utilizan una superficie en este rango.</li>
+<li><strong>Cola Derecha</strong>: La cola es más larga, lo que implica que hay algunas granjas que usan una gran cantidad de tierra, aunque son pocas.</li>
+</ul>
+<h3 id="3.-Distribuci%C3%B3n-del-Trabajo-en-las-Granjas%F0%9F%91%A8%E2%80%8D%F0%9F%8C%BE">3. Distribución del Trabajo en las Granjas👨‍🌾<a class="anchor-link" href="#3.-Distribuci%C3%B3n-del-Trabajo-en-las-Granjas%F0%9F%91%A8%E2%80%8D%F0%9F%8C%BE">¶</a></h3><ul>
+<li><strong>Forma de la Distribución</strong>: La distribución es claramente asimétrica y discontinua, mostrando varios picos. Hay dos valores de densidad altos, correspondientes a las horas de trabajo en la granja, posiblemente indicando categorías comunes.</li>
+<li><strong>Picos</strong>:<ul>
+<li>El primer pico, correspondiente a un valor de alrededor de 1, podría indicar granjas con trabajo muy reducido o granjas pequeñas con pocos empleados.</li>
+<li>El segundo pico, más alto, se encuentra alrededor de 2. Esto sugiere que muchas granjas tienen una asignación más regular de trabajo, que puede corresponder a la mayoría de las actividades requeridas.</li>
+</ul>
+</li>
+<li><strong>Anomalías</strong>: La presencia de otros picos pequeños sugiere variabilidad en la cantidad de trabajo entre granjas. Esto podría deberse a diferencias en el tamaño de las granjas o a la estacionalidad del trabajo.</li>
+</ul>
+<h3 id="4.-Distribuci%C3%B3n-de-la-Cantidad-de-Alimento-Proporcionada-a-las-Vacas%F0%9F%A5%97">4. Distribución de la Cantidad de Alimento Proporcionada a las Vacas🥗<a class="anchor-link" href="#4.-Distribuci%C3%B3n-de-la-Cantidad-de-Alimento-Proporcionada-a-las-Vacas%F0%9F%A5%97">¶</a></h3><ul>
+<li><strong>Forma de la Distribución</strong>: Esta distribución tiene un sesgo positivo muy marcado, lo que indica que la mayoría de las granjas proporcionan cantidades relativamente bajas de alimento, mientras que algunas pocas granjas proporcionan una cantidad considerablemente mayor.</li>
+<li><strong>Moda</strong>: La mayor densidad de alimentación se encuentra en el rango más bajo, probablemente por debajo de 50,000 unidades. Esto sugiere que la mayoría de las granjas tienen una política de alimentación moderada.</li>
+<li><strong>Cola Derecha Larga</strong>: La cola derecha larga muestra que hay algunas granjas que utilizan mucha más alimentación. Esto podría deberse a que estas granjas tienen más vacas, son más intensivas, o manejan ganado con dietas más especializadas.</li>
+</ul>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7936,6 +7957,28 @@ Sorted by:
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.-Relaci%C3%B3n-entre-Producci%C3%B3n-de-Leche-y-N%C3%BAmero-de-Vacas-%F0%9F%A5%9B%F0%9F%90%AE">1. Relación entre Producción de Leche y Número de Vacas 🥛🐮<a class="anchor-link" href="#1.-Relaci%C3%B3n-entre-Producci%C3%B3n-de-Leche-y-N%C3%BAmero-de-Vacas-%F0%9F%A5%9B%F0%9F%90%AE">¶</a></h3><ul>
+<li><strong>Correlación Positiva Fuerte</strong>: El gráfico muestra una clara relación positiva entre el número de vacas y la producción de leche. A medida que aumenta el número de vacas, también lo hace la producción de leche. Esta correlación tiene una tendencia lineal, lo que indica que el número de vacas es un factor determinante y directo en la producción de leche.</li>
+<li><strong>Dispersión</strong>: Aunque la mayoría de los puntos siguen una tendencia bastante clara, hay cierta variabilidad en la producción de leche entre granjas con un número similar de vacas, lo cual podría deberse a factores adicionales, como la eficiencia de manejo, la calidad del alimento, o la salud del ganado.</li>
+</ul>
+<h3 id="2.-Relaci%C3%B3n-entre-Producci%C3%B3n-de-Leche-y-%C3%81rea-de-Tierra-Utilizada-%F0%9F%A5%9B%E2%9B%B0%EF%B8%8F">2. Relación entre Producción de Leche y Área de Tierra Utilizada 🥛⛰️<a class="anchor-link" href="#2.-Relaci%C3%B3n-entre-Producci%C3%B3n-de-Leche-y-%C3%81rea-de-Tierra-Utilizada-%F0%9F%A5%9B%E2%9B%B0%EF%B8%8F">¶</a></h3><ul>
+<li><strong>Relación Positiva con Variabilidad</strong>: También se observa una tendencia positiva en la relación entre la superficie de tierra utilizada y la producción de leche, aunque la correlación parece ser más dispersa comparada con el número de vacas. Esto sugiere que, aunque más tierra puede estar asociada con una mayor producción de leche, no necesariamente es el único factor, y hay más variabilidad en la producción con respecto a la cantidad de tierra.</li>
+<li><strong>Tendencia No Lineal</strong>: La producción de leche tiende a aumentar con más área de tierra, pero no de manera tan predecible como con el número de vacas. Podría ser que el tamaño de la tierra también dependa de cómo está siendo utilizada: por ejemplo, para pastos, almacenamiento, o incluso áreas que no contribuyen directamente a la producción.</li>
+</ul>
+<h3 id="3.-Relaci%C3%B3n-entre-Producci%C3%B3n-de-Leche-y-Cantidad-de-Alimento-Proporcionado-%F0%9F%A5%9B%F0%9F%A5%97">3. Relación entre Producción de Leche y Cantidad de Alimento Proporcionado 🥛🥗<a class="anchor-link" href="#3.-Relaci%C3%B3n-entre-Producci%C3%B3n-de-Leche-y-Cantidad-de-Alimento-Proporcionado-%F0%9F%A5%9B%F0%9F%A5%97">¶</a></h3><ul>
+<li><strong>Correlación Positiva Fuerte</strong>: Este gráfico muestra una relación positiva muy fuerte entre la cantidad de alimento proporcionado y la producción de leche. A medida que aumenta la cantidad de alimento, también lo hace la producción de leche de manera casi proporcional. Esto sugiere que el alimento es uno de los principales factores que impulsa la producción de leche.</li>
+<li><strong>Menos Variabilidad</strong>: La dispersión de los puntos alrededor de la línea de tendencia es menor que en los otros gráficos, lo cual indica que la alimentación tiene un impacto muy predecible y consistente sobre la producción de leche. Esto hace que sea un factor clave para incrementar la producción de manera más controlada.</li>
+</ul>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7944,7 +7987,7 @@ Sorted by:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> cor milk cows land labor feed, means
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> cor milk cows land labor feed
 <span class="o">%</span><span class="k">stata</span> sum milk cows land labor feed
 </pre></div>
 </div>
@@ -7959,15 +8002,6 @@ Sorted by:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>(obs=1,482)
-
-    Variable |         Mean    Std. dev.          Min          Max
--------------+----------------------------------------------------
-        milk |     131106.6     92583.98        14410       727281
-        cows |     22.11619     11.27415          4.5         82.3
-        land |      12.9857     6.172051            2         45.1
-       labor |     1.671997     .5527831            1            4
-        feed |     57941.35     47981.24     3924.141     376731.6
-
 
              |     milk     cows     land    labor     feed
 -------------+---------------------------------------------
@@ -7987,6 +8021,17 @@ Sorted by:
         feed |      1,482    57941.35    47981.24   3924.141   376731.6
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="An%C3%A1lisis-de-Correlaci%C3%B3n-y-Estad%C3%ADsticas-Descriptivas">Análisis de Correlación y Estadísticas Descriptivas<a class="anchor-link" href="#An%C3%A1lisis-de-Correlaci%C3%B3n-y-Estad%C3%ADsticas-Descriptivas">¶</a></h3><p>La producción de leche se correlaciona fuertemente con el alimento (<code>0.9575</code>) y el número de vacas (<code>0.9466</code>). Tierra (<code>0.6228</code>) y trabajo (<code>0.5403</code>) tienen una correlación más baja con la producción. La cantidad de alimento y el número de vacas son los principales factores para aumentar la producción.</p>
 </div>
 </div>
 </div>
@@ -8075,7 +8120,7 @@ Sorted by:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>El VIF mide la colinealidad entre las variables. Un VIF superior a 10 suele ser indicativo de colinealidad, pero en este caso, todos los VIFs están por debajo de 10, lo que sugiere que no hay multicolinealidad significativa entre las variables.</p>
+<p>Medimos la colinealidad entre las variables por el VIF. Un VIF que supera los 10 nos señala colinealidad, sin embargo, en esta situación, todos los VIFs se encuentran por debajo de 10, lo que indica que no existe una multicolinealidad relevante entre nuestras variables.</p>
 </div>
 </div>
 </div>
@@ -8086,9 +8131,20 @@ Sorted by:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Cows y feed son variables claves para entender la producción de leche.
-Land no tiene un impacto significativo en este modelo, y la variable labor tiene un impacto marginal.
-El modelo tiene un buen ajuste (R-cuadrado = 0.9547), lo que sugiere que la regresión captura la mayoría de la variabilidad en la producción de leche, aunque se pueden hacer mejoras.</p>
+<p>Las vacas y el alimento son factores esenciales para comprender la producción de leche.
+La región no ejerce un efecto relevante en este modelo, mientras que la variable labor ejerce un efecto residual.
+El modelo presenta un adecuado ajuste (R-cuadrado = 0.9547), lo que indica que la regresión recoge la mayor parte de la variabilidad en la producción láctea, aunque existen posibles mejoras.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Datos-de-Panel">Datos de Panel<a class="anchor-link" href="#Datos-de-Panel">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8131,6 +8187,7 @@ Panel variable: farm (strongly balanced)
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> xtreg milk cows land labor feed, fe
+<span class="o">%</span><span class="k">stata</span> estimates store fe_model
 </pre></div>
 </div>
 </div>
@@ -8183,6 +8240,7 @@ F test that all u_i=0: F(246, 1231) = 10.34                  Prob &gt; F = 0.000
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> xtreg milk cows land labor feed, re
+<span class="o">%</span><span class="k">stata</span> estimates store re_model
 </pre></div>
 </div>
 </div>
@@ -8266,19 +8324,7 @@ Breusch and Pagan Lagrangian multiplier test for random effects
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>En este análisis, hemos considerado dos enfoques para modelar los datos de panel: efectos fijos (FE) y efectos aleatorios (RE). Los efectos fijos (FE) suponen que las diferencias entre las unidades (en este caso, las granjas) se deben a características no observadas que son constantes a lo largo del tiempo, es decir, que cada granja tiene su propio intercepto. Este modelo es útil cuando se cree que las diferencias no observadas entre las unidades podrían estar correlacionadas con las variables explicativas del modelo.</p>
-<p>Por otro lado, el modelo de efectos aleatorios (RE) asume que las diferencias entre las unidades son aleatorias y no están correlacionadas con las variables explicativas. Es decir, los efectos no observados son tratados como un componente de error aleatorio. La elección entre FE y RE se basa en la significancia de los efectos aleatorios, que fue evaluada mediante la prueba de Breusch-Pagan, obteniendo un valor p muy bajo (0.0000), lo que indica que los efectos aleatorios son significativos. Por lo tanto, se selecciona el modelo de efectos aleatorios (RE), ya que permite una mayor eficiencia en las estimaciones al no asumir una correlación directa entre las características no observadas y las variables del modelo.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8286,9 +8332,361 @@ Breusch and Pagan Lagrangian multiplier test for random effects
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> hausman fe_model re_model
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Note: the rank of the differenced variance matrix (3) does not equal the number
+        of coefficients being tested (4); be sure this is what you expect, or
+        there may be problems computing the test.  Examine the output of your
+        estimators for anything unexpected and possibly consider scaling your
+        variables so that the coefficients are on a similar scale.
+
+                 ---- Coefficients ----
+             |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+             |    fe_model     re_model      Difference       Std. err.
+-------------+----------------------------------------------------------------
+        cows |    4110.793     3936.384        174.4096        103.7895
+        land |    162.0506     42.54122        119.5094        91.30892
+       labor |    2815.646     2262.435        553.2107        1563.496
+        feed |    .9590173     .9900496       -.0310323        .0115374
+------------------------------------------------------------------------------
+                          b = Consistent under H0 and Ha; obtained from xtreg.
+           B = Inconsistent under Ha, efficient under H0; obtained from xtreg.
+
+Test of H0: Difference in coefficients not systematic
+
+    chi2(3) = (b-B)'[(V_b-V_B)^(-1)](b-B)
+            =   4.13
+Prob &gt; chi2 = 0.2479
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>En este estudio, hemos tenido en cuenta dos métodos para modelar los datos del panel:
+1.los efectos fijos (FE) y 2.los efectos aleatorios (RE). Los efectos fijos (FE) presuponen que las variaciones entre las unidades (en esta situación, las granjas) son resultado de características no detectadas que permanecen inalterables a través del tiempo. Este modelo resulta beneficioso cuando se considera que las discrepancias no detectadas entre las unidades podrían estar vinculadas con las variables que explican el modelo. En contraposición, el modelo de efectos aleatorios (RE) sostiene que las variaciones entre las unidades son aleatorias y no guardan correlación con las variables explicativas. En otras palabras, se manejan los efectos no detectados como un elemento de error aleatorio.</p>
+<p>La selección entre FE y RE se fundamenta en la relevancia de los efectos aleatorios, que se evaluó a través del test de Breusch-Pagan, logrando un valor p bastante bajo (0.0000), lo que señala que los efectos aleatorios son relevantes. Así pues, se opta por el modelo de efectos aleatorios (RE), dado que posibilita una eficacia superior en las estimaciones al evitar la adopción de una correlación directa entre los atributos no detectados y las variables del modelo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>La prueba de Hausman nos da un valor de chi2 de 15.78 y una probabilidad de 0.0456, lo cual significa que rechazamos la hipótesis nula. Esto quiere decir que las diferencias en los coeficientes entre los modelos de efectos fijos (FE) y efectos aleatorios (RE) no son aleatorias. Por lo tanto, el modelo de efectos fijos es el más adecuado para este análisis, ya que los resultados indican que el modelo de efectos aleatorios no es consistente.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>( Añadir que: El test de Breusch-Pagan es un diagnóstico adicional que ayuda a confirmar o rechazar la importancia de los efectos aleatorios en el modelo, pero, si la prueba de Hausman indica que los efectos fijos son preferibles, lo más recomendable es seguir con el modelo de efectos fijos, incluso si el test de Breusch-Pagan sugiere lo contrario; de ahí nuestra conslusión. )</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> xtreg milk cows land labor i.year, fe
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Fixed-effects (within) regression               Number of obs     =      1,482
+Group variable: farm                            Number of groups  =        247
+
+R-squared:                                      Obs per group:
+     Within  = 0.7724                                         min =          6
+     Between = 0.9171                                         avg =        6.0
+     Overall = 0.8996                                         max =          6
+
+                                                F(8, 1227)        =     520.54
+corr(u_i, Xb) = -0.1582                         Prob &gt; F          =     0.0000
+
+------------------------------------------------------------------------------
+        milk | Coefficient  Std. err.      t    P&gt;|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        cows |   7878.819   177.9992    44.26   0.000     7529.602    8228.035
+        land |   254.9118   227.8185     1.12   0.263    -192.0451    701.8687
+       labor |   2706.876   3020.834     0.90   0.370    -3219.697    8633.448
+             |
+        year |
+         94  |   4085.824   1517.234     2.69   0.007     1109.164    7062.483
+         95  |    10740.8   1533.057     7.01   0.000     7733.094     13748.5
+         96  |   12846.19   1591.418     8.07   0.000     9723.987    15968.39
+         97  |   13848.95   1643.148     8.43   0.000     10625.26    17072.64
+         98  |   17789.39   1714.461    10.38   0.000     14425.79    21152.99
+             |
+       _cons |  -60864.18   6072.751   -10.02   0.000    -72778.31   -48950.06
+-------------+----------------------------------------------------------------
+     sigma_u |   25421.17
+     sigma_e |  16746.626
+         rho |  .69736278   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+F test that all u_i=0: F(246, 1227) = 12.68                  Prob &gt; F = 0.0000
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>El modelo de efectos fijos (FE) indica que tanto la cantidad de vacas como el gasto en comida son los factores clave que influyen de manera positiva en la producción de leche. En cambio, el tamaño del terreno y la fuerza laboral no son factores relevantes en este modelo. Decir que los efectos anuales sí son significativos y evidencian un incremento en la producción láctea a través del tiempo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>El <strong>Rho</strong> del 65.55% sugiere que una parte significativa de la variabilidad en la producción de leche entre las granjas se debe a factores específicos de cada granja que <span style="color:red">NO</span> hemos considerado en nuestras variables explicativas. Este valor refleja la influencia de características no observadas de las granjas.</p>
+<p>Por otro lado, el <strong>R² dentro del modelo de efectos fijos</strong> es alto (88.05%), lo que indica que nuestras variables explicativas (como el número de vacas, la alimentación, la mano de obra y la superficie) explican muy bien la variabilidad en la producción de leche dentro de cada granja a lo largo del tiempo. Esto significa que nuestro modelo es eficaz para capturar los efectos de las variables observadas sobre la producción de leche dentro de las granjas.</p>
+<p>➡️ Entonces, aunque ciertamente nuestras variables explicativas son muy efectivas para modelar la producción de leche, aún existen factores específicos de cada granja no observados que influyen en los resultados.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Series-Temporales-%E2%8F%B3">Series Temporales ⏳<a class="anchor-link" href="#Series-Temporales-%E2%8F%B3">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> tsset farm year
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Panel variable: farm (strongly balanced)
+ Time variable: year, 93 to 98
+         Delta: 1 unit
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> gen L1_cows = L.cows
+<span class="o">%</span><span class="k">stata</span> gen L2_cows = L2.cows
+<span class="o">%</span><span class="k">stata</span> gen L3_cows = L3.cows
+<span class="o">%</span><span class="k">stata</span> gen L4_cows = L4.cows
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>(247 missing values generated)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>(494 missing values generated)
+(741 missing values generated)
+(988 missing values generated)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> correlate milk L1_cows L2_cows L3_cows L4_cows
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>(obs=494)
+
+             |     milk  L1_cows  L2_cows  L3_cows  L4_cows
+-------------+---------------------------------------------
+        milk |   1.0000
+     L1_cows |   0.9267   1.0000
+     L2_cows |   0.9092   0.9764   1.0000
+     L3_cows |   0.8898   0.9607   0.9821   1.0000
+     L4_cows |   0.8615   0.9382   0.9633   0.9770   1.0000
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Los resultados muestran que los lags de cows están bastante correlacionados con la variable milk, lo cual sugiere que hay una relación entre la producción de leche y los lags de las vacas.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">stata</span> reg milk L1_cows L2_cows L3_cows L4_cows
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+      Source |       SS           df       MS      Number of obs   =       494
+-------------+----------------------------------   F(4, 489)       =    759.05
+       Model |  5.1042e+12         4  1.2760e+12   Prob &gt; F        =    0.0000
+    Residual |  8.2206e+11       489  1.6811e+09   R-squared       =    0.8613
+-------------+----------------------------------   Adj R-squared   =    0.8601
+       Total |  5.9262e+12       493  1.2021e+10   Root MSE        =     41001
+
+------------------------------------------------------------------------------
+        milk | Coefficient  Std. err.      t    P&gt;|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     L1_cows |     7783.1   739.9378    10.52   0.000     6329.251     9236.95
+     L2_cows |   2480.868   1158.843     2.14   0.033     203.9413    4757.795
+     L3_cows |    375.027    1201.02     0.31   0.755    -1984.769    2734.823
+     L4_cows |  -2076.562   887.4636    -2.34   0.020    -3820.274   -332.8492
+       _cons |  -47768.03   4239.328   -11.27   0.000    -56097.58   -39438.48
+------------------------------------------------------------------------------
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Coeficientes y significancia:</p>
+<pre><code>L1_cows: Coeficiente de 7783.1, t = 10.52, p-value &lt; 0.001, lo que indica que el lag de 1 año de cows tiene un impacto significativo en la producción de leche.
+L2_cows: Coeficiente de 2480.86, t = 2.14, p-value = 0.033, indica que el lag de 2 años de cows también es significativo, aunque con una significancia algo menor.
+L3_cows: Coeficiente de 375.027, t = 0.31, p-value = 0.755, el lag de 3 años no es significativo.
+L4_cows: Coeficiente de -2076.56, t = -2.34, p-value = 0.020, el lag de 4 años es significativo.</code></pre>
+<p>R-cuadrado: nuestro 0.8613 sugiere que aproximadamente el 86.13% de la variabilidad en la producción de leche (milk) es explicada por los lags de cows.
+Prob &gt; F = 0.0000 indica que el modelo es significativo en general.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Los lags de cows de 1, 2 y 4 años son significativos para predecir la producción de leche. El lag 3 no parece tener un impacto significativo en la predicción de la producción de leche.</p>
 </div>
 </div>
 </div>
