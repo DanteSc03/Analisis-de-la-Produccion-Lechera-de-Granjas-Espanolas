@@ -28,7 +28,7 @@ pip install stata_kernel
 1. Clona este repositorio en tu máquina local:
 
    ```sh
-   git clone https://github.com/DanteSc03/stata
+   git clone https://github.com/DanteSc03/Analisis-de-la-Produccion-Lechera-de-Granjas-Espanolas
    ```
 
 2. Abre el notebook en Jupyter:
